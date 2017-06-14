@@ -15,3 +15,15 @@
       - xclip
       - less
       - htop
+      - pandoc
+      - lynx
+
+    - name: add readme function
+      lineinfile:
+        path: /etc/profile.d/parsereadme.sh
+        line: 'readme () { pandoc $1 | lynx -stdin }'
+        create: yes
+        state: present
+        owner: root
+        group: root
+        mode: 'u=rw,go=r'
