@@ -1,0 +1,24 @@
+---
+- hosts: all
+  become: yes
+  roles:
+    - qtdevel
+
+  tasks:
+    - apt: "name={{ item }} state=installed"
+      with_items:
+      - make
+      - automake
+      - autoconf
+      - libtool
+      - libtool-bin
+      - g++
+      - valgrind
+      - bison
+      - byacc
+      - flex
+      - libprotobuf-c-dev
+      - libprotobuf-c1
+      - libprotobuf-c1-dbg
+      - protobuf-c-compiler
+      - libunwind-dev

@@ -1,0 +1,13 @@
+---
+- src: gantsign.visual-studio-code
+- src: cmprescott.chrome
+- src: Wtower.python-latest
+- src: geerlingguy.git
+- src: angstwad.docker_ubuntu
+- src: pixelart.vagrant
+- src: gantsign.golang
+- src: andrewrothstein.packer
+- src: manala.zsh
+- src: manala.ohmyzsh
+- src: gantsign.pin-to-launcher
+- src: wtanaka.slack

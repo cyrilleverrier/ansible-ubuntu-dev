@@ -1,0 +1,20 @@
+---
+- hosts: all
+  vars_files:
+    - vars/golang.yml
+  roles:
+     - role: gantsign.golang
+
+  tasks:
+    - name: Get protobuf compiler for Go language
+      shell: go get -u github.com/golang/protobuf/protoc-gen-go
+      args:
+        creates: $GOPATH/bin/protoc-gen-go
+    
+    - name: Install glide golang dependency manager
+      apt_repository:
+        repo: 'ppa:masterminds/glide'   
+    
+    - apt: "name={{ item }} state=installed"
+      with_items:
+      - glide

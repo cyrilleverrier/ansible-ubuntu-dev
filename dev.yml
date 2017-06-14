@@ -1,0 +1,20 @@
+---
+- hosts: all
+  become: yes
+  vars_files:
+    - vars/vagrant.yml
+  roles:
+    - pixelart.vagrant
+    - andrewrothstein.packer
+    - angstwad.docker_ubuntu
+    - geerlingguy.git
+
+  tasks:
+    - apt: "name={{ item }} state=installed"
+      with_items:
+      - libffi-dev
+      - libssl-dev
+      - build-essential
+      - liblzma-dev
+      - protobuf-compiler
+      - tig

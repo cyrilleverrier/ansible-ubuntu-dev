@@ -1,0 +1,7 @@
+manala_ohmyzsh_update: true
+
+manala_ohmyzsh_users:
+  - user:     "{{ ansible_user }}"
+    template: users/default.j2
+    config:
+      - plugins: (git git-extras debian common-aliases history history-substring-search docker docker-compose vagrant virtualenvwrapper jira sudo web-search)

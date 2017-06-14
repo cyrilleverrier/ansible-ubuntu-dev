@@ -1,0 +1,31 @@
+---
+- hosts: all
+  remote_user: root
+  roles:
+    - ubuntudesktop
+    - vim
+    - git
+    - qtdevel
+    - byobu
+    - role: pin-to-launcher
+      pin_to_launcher: unity
+      pin_to_launcher_favorites: 
+        - application: byobu.desktop
+        - application: DigiaQt-qtcreator-community.desktop
+  tasks:
+    - name: install project specific development tools
+      apt: name={{ item }} state=latest
+      with_items:
+        - libcv-dev
+        - checkinstall
+        - netcat-openbsd
+        # Sqlite tools
+        - sqlite3
+        - sqliteman
+        # Google Protocol Buffer tools
+        - protobuf-compiler
+        - libprotobuf-dev
+        # GStreamer plugins
+        - gstreamer1.0-plugins-ugly
+        - gstreamer1.0-plugins-bad
+

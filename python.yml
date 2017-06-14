@@ -1,0 +1,39 @@
+---
+- hosts: localhost
+  become: yes
+
+  tasks:
+    - apt: "name={{ item }} state=installed"
+      with_items:
+      - python-setuptools
+      - python3-pip
+      - python-dev
+      - python3-dev
+      - virtualenvwrapper
+      - pyqt5-dev-tools
+
+    # Set WORKON_HOME variable needed by virtualenvwrapper 
+    - name: make sure /etc/profile.d exists
+      become: yes
+      file:
+        path: /etc/profile.d
+        state: directory
+        owner: root
+        group: root
+        mode: 'u=rwx,go=rx'
+
+    - name: export WORKON_HOME environment variable
+      lineinfile:
+        path: /etc/profile.d/virtualenvwrapper.sh
+        regexp: 'export WORKON_HOME'
+        line: 'export WORKON_HOME=$HOME/.virtualenvs'
+        create: yes
+        state: present
+        owner: root
+        group: root
+        mode: 'u=rw,go=r'
+
+    - pip:
+        name: 
+        - flake8
+        - autopep8

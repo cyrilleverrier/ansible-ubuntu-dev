@@ -1,0 +1,9 @@
+---
+- hosts: localhost
+
+  tasks:
+    - name: Adding user {{ ansible_user_id }}  
+      user: name={{ ansible_user_id }}
+            group={{ ansible_user_id }}
+            groups=docker
+            append=yes

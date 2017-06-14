@@ -1,0 +1,12 @@
+---
+- hosts: localhost
+  become: yes
+
+  tasks:
+    - apt: "name={{ item }} state=installed"
+      with_items:
+      - libsodium-dev
+      - libzmq3-dev
+      - libczmq3
+      - libczmq-dev
+      - libczmq-dbg

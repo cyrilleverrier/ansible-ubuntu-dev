@@ -1,0 +1,8 @@
+# Vagrant
+/.vagrant*/
+/provisioning/playbook.retry
+
+# Vim
+*.swp*
+*.swo*
+

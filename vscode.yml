@@ -1,0 +1,21 @@
+---
+- hosts: localhost
+
+  roles:
+    - role: gantsign.visual-studio-code
+      users:
+        - username: "{{ ansible_user_id }}"
+          visual_studio_code_extensions:
+            - eamodio.gitlens
+            - donjayamanne.git-extension-pack
+            - michelemelluso.gitignore
+            - HookyQR.beautify
+            - PeterJausovec.vscode-docker
+            - donjayamanne.python
+            - lukehoban.go
+            - mohsen1.prettify-json
+            - haaaad.ansible
+            - bbenoist.vagrant
+          visual_studio_code_settings: {
+            "editor.renderWhitespace": true,
+          }

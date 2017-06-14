@@ -1,0 +1,9 @@
+---
+- hosts: localhost
+  become: yes
+
+  tasks:
+    - apt: "name={{ item }} state=installed"
+      with_items:
+      - hardinfo
+      - indicator-multiload
