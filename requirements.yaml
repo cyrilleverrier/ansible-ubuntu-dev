@@ -11,3 +11,5 @@
 - src: manala.ohmyzsh
 - src: gantsign.pin-to-launcher
 - src: wtanaka.slack
+- src: geerlingguy.nodejs
+- src: wtanaka.gcloud-sdk
