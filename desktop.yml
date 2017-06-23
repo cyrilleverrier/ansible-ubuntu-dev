@@ -5,3 +5,17 @@
   roles:
     - cmprescott.chrome
     - wtanaka.slack
+
+  tasks:
+    - apt_key:
+        url: "http://repo.vivaldi.com/archive/linux_signing_key.pub"
+        state: present
+
+    - apt_repository:
+        repo: deb http://repo.vivaldi.com/archive/deb/ stable main
+        state: present
+        update_cache: yes
+
+    - apt:
+        name: vivaldi-stable
+        update_cache: yes
