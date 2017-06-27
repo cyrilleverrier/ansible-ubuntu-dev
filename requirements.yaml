@@ -13,3 +13,6 @@
 - src: wtanaka.slack
 - src: geerlingguy.nodejs
 - src: wtanaka.gcloud-sdk
+- src: gantsign.java
+- src: gantsign.maven
+- src: gantsign.intellij

@@ -1,0 +1,16 @@
+---
+- hosts: all
+  become: yes
+  gather_facts: yes
+  vars_files:
+    - vars/java.yml
+
+  roles:
+    - gantsign.java
+    - gantsign.maven
+    - gantsign.intellij
+  tasks:
+
+    - apt: "name={{ item }} state=installed"
+      with_items:
+      - maven
