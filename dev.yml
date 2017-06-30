@@ -18,3 +18,4 @@
       - liblzma-dev
       - protobuf-compiler
       - tig
+      - rpm
