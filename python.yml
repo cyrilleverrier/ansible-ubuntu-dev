@@ -37,3 +37,4 @@
         name: 
         - flake8
         - autopep8
+        - pylint
