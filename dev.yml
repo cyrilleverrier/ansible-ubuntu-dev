@@ -19,3 +19,8 @@
       - protobuf-compiler
       - tig
       - rpm
+
+    - name: Install rocker
+      shell: curl -SL https://github.com/grammarly/rocker/releases/download/1.3.0/rocker_linux_amd64.tar.gz | tar -xzC /usr/local/bin && chmod +x /usr/local/bin/rocker
+      args:
+        creates: /usr/local/bin/rocker
