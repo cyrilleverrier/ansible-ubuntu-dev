@@ -1,2 +1,2 @@
-golang_version: '1.7.4'
+golang_version: '1.8.3'
 golang_gopath: '$HOME/code/go'
