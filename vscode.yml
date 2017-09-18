@@ -16,6 +16,7 @@
             - mohsen1.prettify-json
             - haaaad.ansible
             - bbenoist.vagrant
+            - ms-vscode.cpptools
           visual_studio_code_settings: {
             "editor.renderWhitespace": true,
           }
