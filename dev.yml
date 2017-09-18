@@ -24,3 +24,27 @@
       shell: curl -SL https://github.com/grammarly/rocker/releases/download/1.3.0/rocker_linux_amd64.tar.gz | tar -xzC /usr/local/bin && chmod +x /usr/local/bin/rocker
       args:
         creates: /usr/local/bin/rocker
+
+    - name: install sub-repo tool
+      become: false
+      git:
+        repo: 'https://github.com/ingydotnet/git-subrepo.git'
+        dest: ~/code/tools/git-subrepo
+        version: issue/216-G
+
+    - name: configure sub-repo tool
+      become: false
+      lineinfile:
+        path: ~/.zshrc
+        regexp: '^source ~/code/tools/git-subrepo/.rc'
+        line: 'source ~/code/tools/git-subrepo/.rc'
+        insertbefore: BOF
+
+    - name: configure sub-repo tool
+      become: false
+      lineinfile:
+        path: ~/.zshrc
+        regexp: "^fpath=\\('~/code/tools/git-subrepo/share/zsh-completion'"
+        line: "fpath=(\'~/code/tools/git-subrepo/share/zsh-completion' $fpath)"
+        insertbefore: BOF
+        
