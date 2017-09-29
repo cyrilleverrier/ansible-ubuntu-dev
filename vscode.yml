@@ -17,6 +17,7 @@
             - haaaad.ansible
             - bbenoist.vagrant
             - ms-vscode.cpptools
+            - redhat.java
           visual_studio_code_settings: {
             "editor.renderWhitespace": true,
           }
