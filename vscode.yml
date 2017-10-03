@@ -18,6 +18,7 @@
             - bbenoist.vagrant
             - ms-vscode.cpptools
             - redhat.java
+            - zxh404.vscode-proto3
           visual_studio_code_settings: {
             "editor.renderWhitespace": true,
           }
