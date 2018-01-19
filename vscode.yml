@@ -3,6 +3,9 @@
 
   roles:
     - role: gantsign.visual-studio-code
+      visual_studio_code_version: '1.17.1'
+      visual_studio_code_redis_url: https://vscode-update.azurewebsites.net/1.17.1/linux-deb-x64/stable
+      visual_studio_code_redis_sha256sum: 83fff23c4c9ffb8303ab9580fd31c3cd834ef58a51fbb2f5bdfac6429543493f
       users:
         - username: "{{ ansible_user_id }}"
           visual_studio_code_extensions:
