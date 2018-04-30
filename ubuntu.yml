@@ -11,3 +11,6 @@
       - compizconfig-settings-manager
       - compiz-plugins
       - update-manager-core
+      - libproxy-dev
+      - ldnsutils
+
