@@ -3,9 +3,11 @@
   become: yes
 
   tasks:
-    - apt: "name={{ item }} state=installed"
+    - apt:
+        name: "{{ item }}"
       with_items:
       - hardinfo
       - indicator-multiload
       - compizconfig-settings-manager
       - compiz-plugins
+      - update-manager-core
