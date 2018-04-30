@@ -22,6 +22,7 @@
       - libprotobuf-c1-dbg
       - protobuf-c-compiler
       - libunwind-dev
+      - libboost-all-dev
 
     # add qtcreator to path
     - name: make sure /etc/profile.d exists
